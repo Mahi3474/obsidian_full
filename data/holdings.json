@@ -1,0 +1,12 @@
+{
+  "BTC/USDT": {
+    "amount": 0.0004261415511833717,
+    "entry_price": 117331.905,
+    "order_id": null
+  },
+  "ETH/USDT": {
+    "amount": 0.011926357129993714,
+    "entry_price": 4192.395,
+    "order_id": null
+  }
+}
