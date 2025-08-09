@@ -1,0 +1,13 @@
+# local env & secrets
+.env
+*.env
+
+# runtime data
+data/tokens.json
+data/holdings.json
+
+# logs
+logs/*.csv
+
+# venv
+.venv/
