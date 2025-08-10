@@ -1,15 +1,26 @@
+# strategies/strategy_core.py
+
 import time, os
 from dotenv import load_dotenv
 
 from utils.exchange_factory import make_exchange
 from utils.logger import log_trade, log_msg
 
-from config import SETTINGS
-import config as CFG  # access UNIVERSE_* via CFG.UNIVERSE_...
+# Settings and universe config
+from config import SETTINGS              # thresholds + runtime config instance
+import config as CFG                     # access UNIVERSE_* via CFG.UNIVERSE_...
 
-from holdings import has_position, open_position, save_position, get_position, list_symbols
+# Portfolio / holdings helpers
+from holdings import (
+    has_position, open_position, save_position, get_position, list_symbols
+)
+
+# Sell side engine
 from sell_engine import MarketSnap, execute_sells
+
+# Universe builder / token list
 from tokens_manager import refresh_symbols
+
 
 load_dotenv()
 
@@ -31,8 +42,8 @@ def spread_ok(orderbook, max_spread_pct):
 def run_strategy(symbols, live=None, entry_usd=None):
     """
     Main loop:
-    - For each symbol: pull order book -> compute bid/ask/last -> SELL first if holding
-    - If not holding: run spread guard + (placeholder) buy signal -> BUY
+      - For each symbol: pull order book → compute bid/ask/last → SELL first if holding
+      - If not holding: run spread guard → (tiny placeholder) buy signal → BUY
     """
 
     # Optional overrides from function args
@@ -45,16 +56,27 @@ def run_strategy(symbols, live=None, entry_usd=None):
     quote = SETTINGS.QUOTE
     print(f"Live mode: {SETTINGS.LIVE_MODE}")
 
-    # ------ Initial universe build ------
-    # Make sure we start with a sane list. Returns BASE list (e.g. ["BTC","ETH"])
-    symbols = refresh_symbols(ex, SETTINGS)
+    # Build/refresh the universe (token bases) before we start
+    # First pass: force a build to warm tokens.json
+    try:
+        refresh_symbols(ex, SETTINGS)
+    except Exception as e:
+        log_msg(f"Initial universe warmup failed: {type(e).__name__}: {e}")
+
+    # Working list we'll iterate (bases only; we add '/QUOTE' below)
+    try:
+        symbols = refresh_symbols(ex, SETTINGS)
+    except Exception as e:
+        log_msg(f"Universe build failed: {type(e).__name__}: {e}")
+        symbols = symbols or []
+
     last_refresh = time.time()
 
     while True:
         # Periodically refresh the trading universe
         if time.time() - last_refresh >= CFG.UNIVERSE_REFRESH_MINUTES * 60:
             try:
-                # keep anything we’re currently holding, even if it falls out of filters
+                # keep anything we're currently holding, even if it falls out of filters
                 held = set(list_symbols())
                 symbols = refresh_symbols(ex, SETTINGS, held_symbols=held)
                 last_refresh = time.time()
@@ -74,7 +96,8 @@ def run_strategy(symbols, live=None, entry_usd=None):
                     log_msg(f"{symbol}: no bid/ask in book; skipping")
                     continue
 
-                # Mid price and spread (% of bid)
+                bid = float(bid)
+                ask = float(ask)
                 last = (bid + ask) / 2.0
                 spread = (ask - bid) / bid
 
@@ -82,7 +105,7 @@ def run_strategy(symbols, live=None, entry_usd=None):
                 if has_position(symbol):
                     snap = MarketSnap(symbol=symbol, bid=bid, ask=ask, last=last, spread=spread)
                     execute_sells(ex, snap)
-                    # continue to next symbol; only buy when not holding
+                    # After evaluating sells, move on to next symbol
                     continue
 
                 # ---- BUY: only if we do NOT currently hold the symbol
@@ -91,36 +114,38 @@ def run_strategy(symbols, live=None, entry_usd=None):
                     log_msg(f"Spread guard skip {symbol}  spread={spread:.4f}")
                     continue
 
-                # TODO: plug your real entry signal here
+                # Tiny placeholder entry signal
+                # You can later replace this with momentum/RSI/etc.
                 confidence = 0.80
                 should_buy = confidence >= 0.75
 
-                if should_buy:
-                    # Safety: require configured entry amount
-                    if SETTINGS.ENTRY_AMOUNT_USD is None:
-                        log_msg("ENTRY_AMOUNT_USD not set; skipping buy")
-                        continue
+                if not should_buy:
+                    continue
 
-                    amount = SETTINGS.ENTRY_AMOUNT_USD / last
+                # Safety: require configured entry amount
+                if SETTINGS.ENTRY_AMOUNT_USD is None:
+                    log_msg("ENTRY_AMOUNT_USD not set; skipping buy")
+                    continue
 
-                    if SETTINGS.LIVE_MODE:
-                        # LIVE: place a market buy; record order id and avg fill if available
-                        order = ex.create_market_buy_order(symbol, amount)
-                        order_id = str(order.get("id") or order.get("orderId") or "")
-                        avg = float(order.get("average") or last)
-                        open_position(symbol, amount=amount, entry_price=avg, order_id=order_id)
-                        log_trade(symbol, confidence, "LIVE BUY", order_id)
-                    else:
-                        # PAPER: assume filled at last
-                        open_position(symbol, amount=amount, entry_price=last, order_id=None)
-                        log_trade(symbol, confidence, "PAPER BUY", None)
+                amount = SETTINGS.ENTRY_AMOUNT_USD / last
+
+                if SETTINGS.LIVE_MODE:
+                    # LIVE: place a market buy; record order id and avg fill if available
+                    order = ex.create_market_buy_order(symbol, amount)
+                    order_id = str(order.get("id") or order.get("orderId") or "")
+                    avg = float(order.get("average") or last)
+                    open_position(symbol, amount=amount, entry_price=avg, order_id=order_id)
+                    log_trade(symbol, confidence, "LIVE_BUY", order_id)
+                else:
+                    # PAPER: assume filled at last
+                    open_position(symbol, amount=amount, entry_price=last, order_id=None)
+                    log_trade(symbol, confidence, "PAPER_BUY", None)
 
             except Exception as e:
-                log_msg(f"Error for {symbol}: {type(e).__name__}: {e}")
+                log_msg(f"Error for {symbol}: {type(e).__name__} — {e}")
                 time.sleep(0.4)  # tiny backoff on error
 
-        # pacing between full symbol scans
-        time.sleep(2.0)
+        time.sleep(2.0)  # pacing between full symbol scans
 
 
 if __name__ == "__main__":
