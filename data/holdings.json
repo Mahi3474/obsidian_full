@@ -8,5 +8,411 @@
     "amount": 0.011926357129993714,
     "entry_price": 4192.395,
     "order_id": null
+  },
+  "BNB/USDT": {
+    "amount": 0.06257156622887428,
+    "entry_price": 799.085,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "NEO/USDT": {
+    "amount": 7.581501137225171,
+    "entry_price": 6.595,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "LTC/USDT": {
+    "amount": 0.41430169449393045,
+    "entry_price": 120.685,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "QTUM/USDT": {
+    "amount": 22.552999548940008,
+    "entry_price": 2.217,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ADA/USDT": {
+    "amount": 62.192922445425715,
+    "entry_price": 0.8039499999999999,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "XRP/USDT": {
+    "amount": 15.501712939279791,
+    "entry_price": 3.22545,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "IOTA/USDT": {
+    "amount": 239.63575365444524,
+    "entry_price": 0.20865,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "XLM/USDT": {
+    "amount": 111.81930001118194,
+    "entry_price": 0.44715,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ONT/USDT": {
+    "amount": 343.2887058015791,
+    "entry_price": 0.14565,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "TRX/USDT": {
+    "amount": 149.0979573579842,
+    "entry_price": 0.33535,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ETC/USDT": {
+    "amount": 2.1226915729144555,
+    "entry_price": 23.555,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ICX/USDT": {
+    "amount": 363.768643142961,
+    "entry_price": 0.13745000000000002,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "VET/USDT": {
+    "amount": 1989.2580067634774,
+    "entry_price": 0.025134999999999998,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "LINK/USDT": {
+    "amount": 2.317497103128621,
+    "entry_price": 21.575,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ONG/USDT": {
+    "amount": 268.8894864210809,
+    "entry_price": 0.18595,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "HOT/USDT": {
+    "amount": 47641.734159123385,
+    "entry_price": 0.0010495,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ZIL/USDT": {
+    "amount": 4158.004158004158,
+    "entry_price": 0.012025000000000001,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ZRX/USDT": {
+    "amount": 188.32391713747646,
+    "entry_price": 0.2655,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "FET/USDT": {
+    "amount": 69.78367062107468,
+    "entry_price": 0.7164999999999999,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "BAT/USDT": {
+    "amount": 313.9717425431711,
+    "entry_price": 0.15925,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ZEC/USDT": {
+    "amount": 1.2589701624071508,
+    "entry_price": 39.715,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "IOST/USDT": {
+    "amount": 13097.57694826457,
+    "entry_price": 0.0038175,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "CELR/USDT": {
+    "amount": 6049.606775559589,
+    "entry_price": 0.008265,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "DASH/USDT": {
+    "amount": 2.158428663932657,
+    "entry_price": 23.165,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "THETA/USDT": {
+    "amount": 57.306590257879655,
+    "entry_price": 0.8725,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ENJ/USDT": {
+    "amount": 662.6905235255136,
+    "entry_price": 0.07544999999999999,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ATOM/USDT": {
+    "amount": 10.589854918987609,
+    "entry_price": 4.721500000000001,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "TFUEL/USDT": {
+    "amount": 1313.887793982394,
+    "entry_price": 0.038055,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ONE/USDT": {
+    "amount": 4372.540445999125,
+    "entry_price": 0.011435,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ALGO/USDT": {
+    "amount": 184.94544109487703,
+    "entry_price": 0.27035,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "DOGE/USDT": {
+    "amount": 208.2248828735034,
+    "entry_price": 0.240125,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "DUSK/USDT": {
+    "amount": 716.8458781362007,
+    "entry_price": 0.06975,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ANKR/USDT": {
+    "amount": 2950.7229271171436,
+    "entry_price": 0.016945,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "WIN/USDT": {
+    "amount": 806516.654568917,
+    "entry_price": 6.199499999999999e-05,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "COS/USDT": {
+    "amount": 13493.45567399811,
+    "entry_price": 0.0037055,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "MTL/USDT": {
+    "amount": 64.39150032195751,
+    "entry_price": 0.7765,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "DENT/USDT": {
+    "amount": 60240.96385542169,
+    "entry_price": 0.00083,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "WAN/USDT": {
+    "amount": 389.7116134060795,
+    "entry_price": 0.1283,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "FUN/USDT": {
+    "amount": 5500.852632157984,
+    "entry_price": 0.0090895,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "CVC/USDT": {
+    "amount": 505.81689428426915,
+    "entry_price": 0.09885,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "CHZ/USDT": {
+    "amount": 1152.4720525527257,
+    "entry_price": 0.043385,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "BAND/USDT": {
+    "amount": 66.35700066357,
+    "entry_price": 0.7535000000000001,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "XTZ/USDT": {
+    "amount": 54.899807850672524,
+    "entry_price": 0.91075,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "RVN/USDT": {
+    "amount": 3439.9724802201586,
+    "entry_price": 0.014535,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "HBAR/USDT": {
+    "amount": 188.18570165038858,
+    "entry_price": 0.265695,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "NKN/USDT": {
+    "amount": 1680.6722689075632,
+    "entry_price": 0.02975,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "STX/USDT": {
+    "amount": 66.71114076050699,
+    "entry_price": 0.7495,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "KAVA/USDT": {
+    "amount": 125.77034335303735,
+    "entry_price": 0.39755,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "ARPA/USDT": {
+    "amount": 2130.8331557639035,
+    "entry_price": 0.023465,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "IOTX/USDT": {
+    "amount": 1623.6402013313848,
+    "entry_price": 0.030795000000000003,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "RLC/USDT": {
+    "amount": 48.00768122899664,
+    "entry_price": 1.0415,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "BCH/USDT": {
+    "amount": 0.087527352297593,
+    "entry_price": 571.25,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "FTT/USDT": {
+    "amount": 53.14908317831517,
+    "entry_price": 0.94075,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "EUR/USDT": {
+    "amount": 42.72591326639608,
+    "entry_price": 1.1702499999999998,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "OGN/USDT": {
+    "amount": 786.7820613690009,
+    "entry_price": 0.06355,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "LSK/USDT": {
+    "amount": 114.8105625717566,
+    "entry_price": 0.4355,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "BNT/USDT": {
+    "amount": 62.189054726368155,
+    "entry_price": 0.804,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
+  },
+  "MBL/USDT": {
+    "amount": 21199.9152003392,
+    "entry_price": 0.0023585,
+    "order_id": "",
+    "trail_high": null,
+    "tp_index": 0
   }
 }
